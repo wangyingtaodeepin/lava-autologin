@@ -1,0 +1,42 @@
+{
+    "actions": [
+        {
+            "command": "deploy_linaro_kernel",
+            "parameters": {
+                "bootloadertype": "ipxe",
+                "kernel": "https://validation.deepin.io/tftpboot/vmlinuz",
+                "nfsrootfs": "https://ci.deepin.io/job/rr-builder-rootfs/28//artifact/rootfs.tar.gz",
+                "ramdisk": "https://validation.deepin.io/tftpboot/initrd.img",
+                "target_type": "deepin"
+            }
+        },
+        {
+            "command": "boot_linaro_image"
+        },
+        {
+            "command": "lava_test_shell",
+            "parameters": {
+                "testdef_repos": [
+                    {
+                        "git-repo": "https://github.com/wangyingtaodeepin/lava-autologin.git",
+                        "parameters": {
+                            "AUTO_LOGIN_USER": "deepin"
+                        },
+                        "testdef": "dde-launch-end.yaml"
+                    }
+                ],
+                "timeout": 900
+            }
+        },
+        {
+            "command": "submit_results",
+            "parameters": {
+                "server": "https://validation.deepin.io/RPC2/",
+                "stream": "/anonymous/network/"
+            }
+        }
+    ],
+    "device_type": "x86_skip_ipxe",
+    "job_name": "get-hardware-information",
+    "timeout": 18000
+}
