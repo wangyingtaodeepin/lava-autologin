@@ -37,6 +37,6 @@
         }
     ],
     "device_type": "x86_skip_ipxe",
-    "job_name": "get-hardware-information",
+    "job_name": "dde-autologin",
     "timeout": 18000
 }

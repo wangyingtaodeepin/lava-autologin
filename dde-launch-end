@@ -45,3 +45,4 @@ duration=$(echo "$end_time-$start_time" | bc)
 
 set +x
 echo $duration
+python check_dde_dock.py
