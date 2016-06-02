@@ -5,7 +5,7 @@
             "parameters": {
                 "bootloadertype": "ipxe",
                 "kernel": "https://validation.deepin.io/tftpboot/vmlinuz",
-                "nfsrootfs": "https://ci.deepin.io/job/rr-builder-rootfs/28//artifact/rootfs.tar.gz",
+                "nfsrootfs": "https://ci.deepin.io/job/rr-builder-rootfs/149/artifact/rootfs.tar.gz",
                 "ramdisk": "https://validation.deepin.io/tftpboot/initrd.img",
                 "target_type": "deepin"
             }
@@ -32,7 +32,7 @@
             "command": "submit_results",
             "parameters": {
                 "server": "https://validation.deepin.io/RPC2/",
-                "stream": "/anonymous/network/"
+                "stream": "/anonymous/test/"
             }
         }
     ],
