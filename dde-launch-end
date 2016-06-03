@@ -46,5 +46,8 @@ duration=$(echo "$end_time-$start_time" | bc)
 # set +x
 echo $duration
 python check_dde_dock.py
+su $AUTO_LOGIN_USER
+who
+pwd
 export DISPLAY=:0
 python autotest-menu/test_menu.py
