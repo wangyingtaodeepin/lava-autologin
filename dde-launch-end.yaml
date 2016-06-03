@@ -27,6 +27,4 @@ install:
 run:
     steps:
         - "export AUTO_LOGIN_USER" 
-        - "/bin/bash dde-launch-end"
-        - "export DISPLAY=:0"
-        - "git submodule update"
+        - "DEBUG=yes /bin/bash dde-launch-end"
