@@ -47,5 +47,4 @@ duration=$(echo "$end_time-$start_time" | bc)
 echo $duration
 python check_dde_dock.py
 export DISPLAY=:0
-git submodule update
 python autotest-menu/test_menu.py
