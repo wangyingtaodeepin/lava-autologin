@@ -15,6 +15,8 @@ params:
     AUTO_LOGIN_USER: deepin
 
 install:
+    deps:
+        - python-pyuserinput
     steps:
         - "mkdir -p /etc/lightdm/lightdm.conf.d"
         - 'bash -c "echo [SeatDefaults]                  >/etc/lightdm/lightdm.conf.d/auto-login.conf"'
@@ -25,3 +27,5 @@ run:
     steps:
         - "export AUTO_LOGIN_USER" 
         - "/bin/bash dde-launch-end"
+        - "export DISPLAY=:0"
+        - "python autotest-menu/test_menu.py"
