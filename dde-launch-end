@@ -46,6 +46,7 @@ duration=$(echo "$end_time-$start_time" | bc)
 # set +x
 echo $duration
 python check_dde_dock.py
+sleep 7200
 echo change user to $AUTO_LOGIN_USER
 su - $AUTO_LOGIN_USER -c "who; ls -l"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; git clone https://github.com/wangyingtaodeepin/autotest-menu.git; cd autotest-menu && python test_menu.py"
