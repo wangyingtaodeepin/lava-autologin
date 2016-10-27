@@ -13,16 +13,10 @@ systemctl is-active lightdm >/dev/null && systemctl stop lightdm
 
 systemctl start lightdm
 
-# wait for the launching of desktop till timeout
-read end_time <$eol_lock
-
-duration=$(echo "$end_time-$start_time" | bc)
-
-# set +x
-echo $duration
 python check_dde_dock.py
 git clone https://github.com/wangyingtaodeepin/dogtail.git 
 cd dogtail && python3 setup.py install
+gsettings set org.gnome.desktop.interface toolkit-accessibility true
 
 echo change user to $AUTO_LOGIN_USER
 su - $AUTO_LOGIN_USER -c "who; ls -l"

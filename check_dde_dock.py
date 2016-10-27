@@ -20,6 +20,9 @@ while True:
         time.sleep(30)
         sys.exit(0)
     elif timeout != 0:
+        time.sleep(1)
+        global timeout
+        timeout = timeout - 1
         continue
     else:
         sys.exit(1)
