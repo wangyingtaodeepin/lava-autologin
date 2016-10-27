@@ -29,4 +29,6 @@ install:
 run:
     steps:
         - "export AUTO_LOGIN_USER" 
-        - "DEBUG=yes /bin/bash dde-launch-end"
+        - "/bin/bash run-case"
+        - "cp /home/dsystem/result.txt test.result"
+        - "lava-test-run-attach test.result text/plain"

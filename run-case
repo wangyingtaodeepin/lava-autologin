@@ -1,0 +1,29 @@
+#!/bin/bash
+if [[ -z "AUTO_LOGIN_USER" ]]; then
+    echo a user name must be given in order to login into destkop >&2
+    exit 1    
+fi
+
+if [[ 0 != $UID ]]; then
+    echo priveledged user is required >&2
+    exit 1
+fi
+
+systemctl is-active lightdm >/dev/null && systemctl stop lightdm
+
+systemctl start lightdm
+
+# wait for the launching of desktop till timeout
+read end_time <$eol_lock
+
+duration=$(echo "$end_time-$start_time" | bc)
+
+# set +x
+echo $duration
+python check_dde_dock.py
+git clone https://github.com/wangyingtaodeepin/dogtail.git 
+cd dogtail && python3 setup.py install
+
+echo change user to $AUTO_LOGIN_USER
+su - $AUTO_LOGIN_USER -c "who; ls -l"
+su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; git clone https://github.com/linuxdeepin/dsystem.git; cd dsystem && python3 lava_run.py"
