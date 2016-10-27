@@ -21,8 +21,8 @@ while True:
         sys.exit(0)
     elif timeout != 0:
         time.sleep(1)
-        global timeout
         timeout = timeout - 1
+        print(timeout)
         continue
     else:
         sys.exit(1)

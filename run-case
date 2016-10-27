@@ -16,9 +16,8 @@ systemctl start lightdm
 python check_dde_dock.py
 git clone https://github.com/wangyingtaodeepin/dogtail.git 
 cd dogtail && python3 setup.py install
-export DISPLAY=:0
-gsettings set org.gnome.desktop.interface toolkit-accessibility true
 
 echo change user to $AUTO_LOGIN_USER
 su - $AUTO_LOGIN_USER -c "who; ls -l"
+su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; gsettings set org.gnome.desktop.interface toolkit-accessibility true"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; git clone https://github.com/linuxdeepin/dsystem.git; cd dsystem && python3 dde-dock.py"
