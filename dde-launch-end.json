@@ -4,9 +4,9 @@
             "command": "deploy_linaro_kernel",
             "parameters": {
                 "bootloadertype": "ipxe",
-                "kernel": "https://validation.deepin.io/tftpboot/vmlinuz",
+                "kernel":    "https://ci.deepin.io/job/rr-builder-rootfs/148/artifact/vmlinuz",
                 "nfsrootfs": "https://ci.deepin.io/job/rr-builder-rootfs/148/artifact/rootfs.tar.gz",
-                "ramdisk": "https://validation.deepin.io/tftpboot/initrd.img",
+                "ramdisk":   "https://ci.deepin.io/job/rr-builder-rootfs/148/artifact/initrd.img",
                 "target_type": "deepin"
             }
         },
@@ -36,7 +36,7 @@
             }
         }
     ],
-    "job_name": "test-desktop-menu",
+    "job_name": "test-desktop",
     "target": "104",
     "timeout": 18000
 }
