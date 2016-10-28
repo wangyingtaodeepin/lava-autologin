@@ -30,5 +30,5 @@ run:
         - "echo $CASE_ID"
         - "echo $CASE_ID > /tmp/id.txt"
         - "/bin/bash run-case"
-        - "cp /home/dsystem/result.txt test.result"
+        - "cp /home/deepin/dsystem/result.txt test.result"
         - "lava-test-run-attach test.result text/plain"

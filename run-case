@@ -18,6 +18,6 @@ git clone https://github.com/wangyingtaodeepin/dogtail.git
 cd dogtail && python3 setup.py install
 
 echo change user to $AUTO_LOGIN_USER
-su - $AUTO_LOGIN_USER -c "who; ls -l"
+su - $AUTO_LOGIN_USER -c "who; pwd; ls -l"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; gsettings set org.gnome.desktop.interface toolkit-accessibility true"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; git clone https://github.com/linuxdeepin/dsystem.git; cd dsystem && python3 lava_run.py"
