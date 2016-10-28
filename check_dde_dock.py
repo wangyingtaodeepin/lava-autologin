@@ -20,8 +20,8 @@ while True:
         time.sleep(30)
         sys.exit(0)
     elif timeout != 0:
-        time.sleep(1)
-        timeout = timeout - 1
+        time.sleep(10)
+        timeout = timeout - 10
         print(timeout)
         continue
     else:
