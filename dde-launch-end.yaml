@@ -29,7 +29,6 @@ run:
         - "export CASE_ID"
         - "echo $CASE_ID"
         - "echo $CASE_ID > /tmp/id.txt"
-        - "pip3 install pyautogui pyautogui pexpect configparser"
         - "/bin/bash run-case"
         - "cp /home/deepin/dsystem/result.txt test.result"
         - "lava-test-run-attach test.result text/plain"
