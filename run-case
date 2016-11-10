@@ -23,4 +23,5 @@ su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; pip3 install --trusted-host pypi.do
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; pip3 install --trusted-host pypi.doubanio.com -i http://pypi.doubanio.com/simple/ -U pexpect"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; pip3 install --trusted-host pypi.doubanio.com -i http://pypi.doubanio.com/simple/ -U configparser"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; gsettings set org.gnome.desktop.interface toolkit-accessibility true"
+su - $AUTO_LOGIN_USER -c "locale -a"
 su - $AUTO_LOGIN_USER -c "export DISPLAY=:0; git clone https://github.com/linuxdeepin/dsystem.git; cd dsystem && python3 lava_run.py"
